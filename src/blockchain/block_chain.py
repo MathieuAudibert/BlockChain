@@ -9,10 +9,10 @@ class BlockChain:
   def __init__(self, liste_transactions, block_precedant):
     self.liste_transactions = liste_transactions
     self.block_precedant = block_precedant
-    self.block_timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    self.block_timestamp = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
     self.block_raw_data = " - ".join(liste_transactions) + " - " + block_precedant
     self.hash = hashlib.sha256(self.block_raw_data.encode()).hexdigest()
-    self.block_data = " Hash: " + self.hash + " BlockP Hash: " + self.block_precedant + " Transactions: " + self.liste_transactions
+    self.block_data = " Hash: " + self.hash + " BlockP Hash: " + self.block_precedant + " Transactions: " + str(self.liste_transactions) + " Timestamp: " + self.block_timestamp
 
   # Getters 
   def get_list_transactions(self):
@@ -40,6 +40,7 @@ class BlockChain:
   def set_block_precedant(self, block_precedant):
     self.block_precedant = block_precedant
 
+"""
 t1 = "Clément envoie 2EUR a Paul"
 t2 = "Paul envoie 3EUR a Mathieu"
 t3 = "Mathieu envoie 1EUR a Clément"
@@ -49,3 +50,7 @@ print(b1.get_block_data())
 
 b2 = BlockChain([t2, t3], b1.get_hash())
 print(b2.get_block_data())
+"""
+
+
+
