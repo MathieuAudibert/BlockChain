@@ -110,6 +110,7 @@ def sauvegarder_en_json(blockchaine, transaction_file_name, path="results"):
     return chemin
 
 def main():
+    
     fichier = input("Rentrez le nom du fichier de transactions: ").strip()
     transactionsf = os.path.join("transactions", fichier)  
     transactions = recup_transactions(transactionsf)
