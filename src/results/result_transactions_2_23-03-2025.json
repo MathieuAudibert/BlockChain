@@ -1,104 +1,104 @@
 [
     {
         "index": 0,
-        "date": "23-03-2025 02:55:57",
-        "hash": "45f2723fe0699eafc31fcd1d3cf532022987903cb84adc6bc205cbafbf706268",
+        "date": "23-03-2025 18:16:25",
+        "hash": "ea40ec1c278e3786679917017b2ad3be254cbca7144c906ac87e0dff3b257526",
         "previous_hash": "Initial",
         "transactions": [
-            "Alix envoie 10 ETH a Mathieu",
-            "Mathieu envoie 3.5 ETH a Clement",
-            "Clement envoie 1.75 ETH a Raph",
-            "Raph envoie 0.5 ETH a Emma"
+            "Alix envoie 11 EUR a Mathieu",
+            "Mathieu envoie 3.5 EUR a Clement",
+            "Clement envoie 1.75 EUR a Raph",
+            "Raph envoie 0.5 EUR a Emma"
         ],
-        "raw_data": "Alix envoie 10 ETH a Mathieu - Mathieu envoie 3.5 ETH a Clement - Clement envoie 1.75 ETH a Raph - Raph envoie 0.5 ETH a Emma - Initial"
+        "raw_data": "Alix envoie 11 EUR a Mathieu - Mathieu envoie 3.5 EUR a Clement - Clement envoie 1.75 EUR a Raph - Raph envoie 0.5 EUR a Emma - Initial"
     },
     {
         "index": 1,
-        "date": "23-03-2025 02:55:57",
-        "hash": "86312271b5546fd4063c11848a8708fb003383d19c82c219bac1f7fa1d75d625",
-        "previous_hash": "45f2723fe0699eafc31fcd1d3cf532022987903cb84adc6bc205cbafbf706268",
+        "date": "23-03-2025 18:16:25",
+        "hash": "3e453b10f1cb259e90c34aa9de9b7967dc83312f14ba3bad96dc565ce001a226",
+        "previous_hash": "ea40ec1c278e3786679917017b2ad3be254cbca7144c906ac87e0dff3b257526",
         "transactions": [
-            "Emma envoie 2 ETH a Frank",
-            "Frank envoie 1 ETH a Alix",
-            "Mathieu envoie 4 ETH a Emma",
-            "Clement envoie 2.5 ETH a Frank"
+            "Emma envoie 2 EUR a Frank",
+            "Frank envoie 1 EUR a Alix",
+            "Mathieu envoie 4 EUR a Emma",
+            "Clement envoie 2.5 EUR a Frank"
         ],
-        "raw_data": "Emma envoie 2 ETH a Frank - Frank envoie 1 ETH a Alix - Mathieu envoie 4 ETH a Emma - Clement envoie 2.5 ETH a Frank - 45f2723fe0699eafc31fcd1d3cf532022987903cb84adc6bc205cbafbf706268"
+        "raw_data": "Emma envoie 2 EUR a Frank - Frank envoie 1 EUR a Alix - Mathieu envoie 4 EUR a Emma - Clement envoie 2.5 EUR a Frank - ea40ec1c278e3786679917017b2ad3be254cbca7144c906ac87e0dff3b257526"
     },
     {
         "index": 2,
-        "date": "23-03-2025 02:55:57",
-        "hash": "17360ffd166bb95f61ca6cc14634beaa7f51448c92104388e339ecc4964c1507",
-        "previous_hash": "86312271b5546fd4063c11848a8708fb003383d19c82c219bac1f7fa1d75d625",
+        "date": "23-03-2025 18:16:25",
+        "hash": "44b7fd575c11e51549363494c00bc2f4bea2f65d075645cb3399336942b2a942",
+        "previous_hash": "3e453b10f1cb259e90c34aa9de9b7967dc83312f14ba3bad96dc565ce001a226",
         "transactions": [
-            "Raph envoie 0.75 ETH a Alix",
-            "Emma envoie 3 ETH a Mathieu",
-            "Frank envoie 1.5 ETH a Clement",
-            "Alix envoie 5 ETH a Raph"
+            "Raph envoie 0.75 EUR a Alix",
+            "Emma envoie 3 EUR a Mathieu",
+            "Frank envoie 1.5 EUR a Clement",
+            "Alix envoie 5 EUR a Raph"
         ],
-        "raw_data": "Raph envoie 0.75 ETH a Alix - Emma envoie 3 ETH a Mathieu - Frank envoie 1.5 ETH a Clement - Alix envoie 5 ETH a Raph - 86312271b5546fd4063c11848a8708fb003383d19c82c219bac1f7fa1d75d625"
+        "raw_data": "Raph envoie 0.75 EUR a Alix - Emma envoie 3 EUR a Mathieu - Frank envoie 1.5 EUR a Clement - Alix envoie 5 EUR a Raph - 3e453b10f1cb259e90c34aa9de9b7967dc83312f14ba3bad96dc565ce001a226"
     },
     {
         "index": 3,
-        "date": "23-03-2025 02:55:57",
-        "hash": "6b530809ed965b5fffeb3506ba4d82d52ce0b61df659e83022f6d5690047b604",
-        "previous_hash": "17360ffd166bb95f61ca6cc14634beaa7f51448c92104388e339ecc4964c1507",
+        "date": "23-03-2025 18:16:25",
+        "hash": "d2d9aa495957115e9232f55634cf4ed9074a278d598e1a73e3dc34b71e048e1c",
+        "previous_hash": "44b7fd575c11e51549363494c00bc2f4bea2f65d075645cb3399336942b2a942",
         "transactions": [
-            "Mathieu envoie 2.25 ETH a Frank",
-            "Clement envoie 1.25 ETH a Alix",
-            "Raph envoie 2.5 ETH a Mathieu",
-            "Emma envoie 0.8 ETH a Clement"
+            "Mathieu envoie 2.25 EUR a Frank",
+            "Clement envoie 1.25 EUR a Alix",
+            "Raph envoie 2.5 EUR a Mathieu",
+            "Emma envoie 0.8 EUR a Clement"
         ],
-        "raw_data": "Mathieu envoie 2.25 ETH a Frank - Clement envoie 1.25 ETH a Alix - Raph envoie 2.5 ETH a Mathieu - Emma envoie 0.8 ETH a Clement - 17360ffd166bb95f61ca6cc14634beaa7f51448c92104388e339ecc4964c1507"
+        "raw_data": "Mathieu envoie 2.25 EUR a Frank - Clement envoie 1.25 EUR a Alix - Raph envoie 2.5 EUR a Mathieu - Emma envoie 0.8 EUR a Clement - 44b7fd575c11e51549363494c00bc2f4bea2f65d075645cb3399336942b2a942"
     },
     {
         "index": 4,
-        "date": "23-03-2025 02:55:57",
-        "hash": "714ae29d4cadf07a75bff332ff4f3741347b2aec0dec0a4e44629233faa3a3bf",
-        "previous_hash": "6b530809ed965b5fffeb3506ba4d82d52ce0b61df659e83022f6d5690047b604",
+        "date": "23-03-2025 18:16:25",
+        "hash": "de036ffb1b1d59fd75988a782ddef4caba8fb2bed0fcde3e5ca6d736c55c8aea",
+        "previous_hash": "d2d9aa495957115e9232f55634cf4ed9074a278d598e1a73e3dc34b71e048e1c",
         "transactions": [
-            "Frank envoie 3.75 ETH a Raph",
-            "Alix envoie 1.2 ETH a Emma",
-            "Mathieu envoie 2.8 ETH a Frank",
-            "Clement envoie 0.9 ETH a Alix"
+            "Frank envoie 3.75 EUR a Raph",
+            "Alix envoie 1.2 EUR a Emma",
+            "Mathieu envoie 2.8 EUR a Frank",
+            "Clement envoie 0.9 EUR a Alix"
         ],
-        "raw_data": "Frank envoie 3.75 ETH a Raph - Alix envoie 1.2 ETH a Emma - Mathieu envoie 2.8 ETH a Frank - Clement envoie 0.9 ETH a Alix - 6b530809ed965b5fffeb3506ba4d82d52ce0b61df659e83022f6d5690047b604"
+        "raw_data": "Frank envoie 3.75 EUR a Raph - Alix envoie 1.2 EUR a Emma - Mathieu envoie 2.8 EUR a Frank - Clement envoie 0.9 EUR a Alix - d2d9aa495957115e9232f55634cf4ed9074a278d598e1a73e3dc34b71e048e1c"
     },
     {
         "index": 5,
-        "date": "23-03-2025 02:55:57",
-        "hash": "9596dbaf5e545e33761927f5b63e10aa307d19a249a1a1a67f53603c8cb4a8c2",
-        "previous_hash": "714ae29d4cadf07a75bff332ff4f3741347b2aec0dec0a4e44629233faa3a3bf",
+        "date": "23-03-2025 18:16:25",
+        "hash": "25d744812bbd6d2e5ccf99ff71a21233ebc62ef366cdfad0aaa32badb1a01578",
+        "previous_hash": "de036ffb1b1d59fd75988a782ddef4caba8fb2bed0fcde3e5ca6d736c55c8aea",
         "transactions": [
-            "Raph envoie 1.5 ETH a Mathieu",
-            "Emma envoie 2.1 ETH a Clement",
-            "Frank envoie 0.6 ETH a Raph",
-            "Alix envoie 3.3 ETH a Emma"
+            "Raph envoie 1.5 EUR a Mathieu",
+            "Emma envoie 2.1 EUR a Clement",
+            "Frank envoie 0.6 EUR a Raph",
+            "Alix envoie 3.3 EUR a Emma"
         ],
-        "raw_data": "Raph envoie 1.5 ETH a Mathieu - Emma envoie 2.1 ETH a Clement - Frank envoie 0.6 ETH a Raph - Alix envoie 3.3 ETH a Emma - 714ae29d4cadf07a75bff332ff4f3741347b2aec0dec0a4e44629233faa3a3bf"
+        "raw_data": "Raph envoie 1.5 EUR a Mathieu - Emma envoie 2.1 EUR a Clement - Frank envoie 0.6 EUR a Raph - Alix envoie 3.3 EUR a Emma - de036ffb1b1d59fd75988a782ddef4caba8fb2bed0fcde3e5ca6d736c55c8aea"
     },
     {
         "index": 6,
-        "date": "23-03-2025 02:55:57",
-        "hash": "bf4b5339c3237ca278ce33c7ab6c523220a2d99a6b14ae591d80b259c7049b3a",
-        "previous_hash": "9596dbaf5e545e33761927f5b63e10aa307d19a249a1a1a67f53603c8cb4a8c2",
+        "date": "23-03-2025 18:16:25",
+        "hash": "02a99b94d3f557d05d70dc5f5c8a52635a5f1f08d5e1c449222829bcd88b9ecd",
+        "previous_hash": "25d744812bbd6d2e5ccf99ff71a21233ebc62ef366cdfad0aaa32badb1a01578",
         "transactions": [
-            "Mathieu envoie 1.7 ETH a Raph",
-            "Clement envoie 2.2 ETH a Emma",
-            "Raph envoie 0.4 ETH a Frank",
-            "Emma envoie 1.9 ETH a Alix"
+            "Mathieu envoie 1.7 EUR a Raph",
+            "Clement envoie 2.2 EUR a Emma",
+            "Raph envoie 0.4 EUR a Frank",
+            "Emma envoie 1.9 EUR a Alix"
         ],
-        "raw_data": "Mathieu envoie 1.7 ETH a Raph - Clement envoie 2.2 ETH a Emma - Raph envoie 0.4 ETH a Frank - Emma envoie 1.9 ETH a Alix - 9596dbaf5e545e33761927f5b63e10aa307d19a249a1a1a67f53603c8cb4a8c2"
+        "raw_data": "Mathieu envoie 1.7 EUR a Raph - Clement envoie 2.2 EUR a Emma - Raph envoie 0.4 EUR a Frank - Emma envoie 1.9 EUR a Alix - 25d744812bbd6d2e5ccf99ff71a21233ebc62ef366cdfad0aaa32badb1a01578"
     },
     {
         "index": 7,
-        "date": "23-03-2025 02:55:57",
-        "hash": "139acbe4d6d86a7f42b1f12c4794f2b93577d320b2c4f138d6b19f226fcafdf9",
-        "previous_hash": "bf4b5339c3237ca278ce33c7ab6c523220a2d99a6b14ae591d80b259c7049b3a",
+        "date": "23-03-2025 18:16:25",
+        "hash": "b80f87f18bc121400f46a052da6b445221b33b6ce7dd36879aaa968355a1f5d5",
+        "previous_hash": "02a99b94d3f557d05d70dc5f5c8a52635a5f1f08d5e1c449222829bcd88b9ecd",
         "transactions": [
-            "Frank envoie 2.6 ETH a Mathieu",
-            "Alix envoie 0.75 ETH a Clement"
+            "Frank envoie 2.6 EUR a Mathieu",
+            "Alix envoie 0.75 EUR a Clement"
         ],
-        "raw_data": "Frank envoie 2.6 ETH a Mathieu - Alix envoie 0.75 ETH a Clement - bf4b5339c3237ca278ce33c7ab6c523220a2d99a6b14ae591d80b259c7049b3a"
+        "raw_data": "Frank envoie 2.6 EUR a Mathieu - Alix envoie 0.75 EUR a Clement - 02a99b94d3f557d05d70dc5f5c8a52635a5f1f08d5e1c449222829bcd88b9ecd"
     }
 ]
