@@ -1,5 +1,5 @@
-/src/results/*
-/src/transactions/*
+# /src/results/* A voir si je veux cacher mes fichier de base ou pas
+# /src/transactions/* A voir si je veux cacher mes fichier de base ou pas
 
 /src/blockchain/__pycache__/
 /src/tests/__pycache__/

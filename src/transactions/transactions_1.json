@@ -1,0 +1,14 @@
+{
+    "transactions": [
+      "Alix envoie 5 EUR a Clement",
+      "Alix envoie 2 EUR a Paul",
+      "Paul envoie 1 EUR a Mathieu",
+      "Mathieu envoie 0.5 EUR a Alix",
+      "Mathieu envoie 1.5 EUR a Clement",
+      "Mathieu envoie 3 EUR a Roman",
+      "Raph envoie 2 EUR a Madeleine",
+      "Raph envoie 1 EUR a Alix",
+      "Clement envoie 0.75 EUR a Maxence",
+      "Clement envoie 1.25 EUR a Mathieu"
+    ]
+  }

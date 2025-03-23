@@ -1,0 +1,39 @@
+[
+    {
+        "index": 0,
+        "date": "23-03-2025 02:55:47",
+        "hash": "278ab5a99f1bcbf247a89512e4d4aa16c349a22ca32d2ed1d0eb3626b747604b",
+        "previous_hash": "Initial",
+        "transactions": [
+            "Alix envoie 5 EUR a Clement",
+            "Alix envoie 2 EUR a Paul",
+            "Paul envoie 1 EUR a Mathieu",
+            "Mathieu envoie 0.5 EUR a Alix"
+        ],
+        "raw_data": "Alix envoie 5 EUR a Clement - Alix envoie 2 EUR a Paul - Paul envoie 1 EUR a Mathieu - Mathieu envoie 0.5 EUR a Alix - Initial"
+    },
+    {
+        "index": 1,
+        "date": "23-03-2025 02:55:47",
+        "hash": "d87105dc96605075f9a2ffb1bebb1a52a27d0082b015cb45c5f78c74947a3061",
+        "previous_hash": "278ab5a99f1bcbf247a89512e4d4aa16c349a22ca32d2ed1d0eb3626b747604b",
+        "transactions": [
+            "Mathieu envoie 1.5 EUR a Clement",
+            "Mathieu envoie 3 EUR a Roman",
+            "Raph envoie 2 EUR a Madeleine",
+            "Raph envoie 1 EUR a Alix"
+        ],
+        "raw_data": "Mathieu envoie 1.5 EUR a Clement - Mathieu envoie 3 EUR a Roman - Raph envoie 2 EUR a Madeleine - Raph envoie 1 EUR a Alix - 278ab5a99f1bcbf247a89512e4d4aa16c349a22ca32d2ed1d0eb3626b747604b"
+    },
+    {
+        "index": 2,
+        "date": "23-03-2025 02:55:47",
+        "hash": "6f6badae2366c1a4f555ad15bf34772901b7d149ab8daea1df4418d8bba774d3",
+        "previous_hash": "d87105dc96605075f9a2ffb1bebb1a52a27d0082b015cb45c5f78c74947a3061",
+        "transactions": [
+            "Clement envoie 0.75 EUR a Maxence",
+            "Clement envoie 1.25 EUR a Mathieu"
+        ],
+        "raw_data": "Clement envoie 0.75 EUR a Maxence - Clement envoie 1.25 EUR a Mathieu - d87105dc96605075f9a2ffb1bebb1a52a27d0082b015cb45c5f78c74947a3061"
+    }
+]
