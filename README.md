@@ -5,7 +5,7 @@ Small Python project to understand & use blockchains
 # Config ⚙️
 - Python
 
-# Usage 
+# Usage 🧾
 - Format your transactions files in **json**
 - Insert your transactions.json files in **/src/transactions**
 - run ```python menu.py ```
