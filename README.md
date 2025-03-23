@@ -1,2 +1,8 @@
-# BlockChain
-Small Python project to understand &amp; use blockchains
+#AntChain 🐜
+
+Small Python project to understand & use blockchains
+
+# Config ⚙️
+- Python
+
+-- Mathieu Audibert
