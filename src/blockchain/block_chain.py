@@ -39,18 +39,3 @@ class BlockChain:
 
   def set_block_precedant(self, block_precedant):
     self.block_precedant = block_precedant
-
-"""
-t1 = "Clément envoie 2EUR a Paul"
-t2 = "Paul envoie 3EUR a Mathieu"
-t3 = "Mathieu envoie 1EUR a Clément"
-
-b1 = BlockChain([t1], "Initial")
-print(b1.get_block_data())
-
-b2 = BlockChain([t2, t3], b1.get_hash())
-print(b2.get_block_data())
-"""
-
-
-
