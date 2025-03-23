@@ -34,7 +34,7 @@ jobs:
           
       - name: Run tests and generate coverage
         run: |
-          pytest --cov=. --cov-report=xml --cov-report=term
+          pytest src/tests --cov=src --cov-report=xml --cov-report=term
           
       - name: Download and install SonarScanner
         run: |
@@ -53,5 +53,6 @@ jobs:
             -Dsonar.organization=mathieuaudibert \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
-            -Dsonar.java.binaries=. \
+            -Dsonar.sources=src \
+            -Dsonar.tests=src/tests \
             -Dsonar.python.coverage.reportPaths=coverage.xml
