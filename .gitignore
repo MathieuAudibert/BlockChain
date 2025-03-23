@@ -1,2 +1,4 @@
 /src/results/*
 /src/transactions/*
+
+/src/blockchain/__pycache__/
