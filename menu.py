@@ -24,6 +24,7 @@ def menu():
     while True: 
         print("Choissisez votre solution (Entrer pour quitter):")
         print("             (1) Creer une blockchaine a partir de votre fichier de transactions")
+        print("             (2) Quitter")
 
         choix = input("Choice: ")
         if choix == "1":
@@ -32,7 +33,7 @@ def menu():
             #os.system("python3 scripts/get_gameById.py")
         #elif choix == "3":
             #exit()
-        elif choix == "Enter":
+        elif choix == "" or choix == "2":
             exit()
         else:
             print("Choix invalide")
