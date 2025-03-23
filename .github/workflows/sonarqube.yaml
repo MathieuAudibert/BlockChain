@@ -27,15 +27,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt || echo "No requirements.txt found"
 
+      - name: Install SonarScanner
+        run: |
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+          unzip sonar-scanner-cli-4.6.2.2472-linux.zip
+          sudo mv sonar-scanner-4.6.2.2472-linux /opt/sonar-scanner
+          sudo ln -s /opt/sonar-scanner/bin/sonar-scanner /usr/local/bin/sonar-scanner
+
       - name: Run tests and generate coverage report
         run: |
           pytest --cov=. --cov-report=xml --cov-report=term
-          
+
       - name: Run SonarCloud Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          pip install sonar-scanner-cli
           sonar-scanner \
             -Dsonar.projectKey=MathieuAudibert_BlockChain \
             -Dsonar.organization=mathieuaudibert \
