@@ -87,18 +87,19 @@ def blockchaine_dict(blockchaine):
     
     return result
 
-def sauvegarder_en_json(blockchaine, path="results"):
+def sauvegarder_en_json(blockchaine, transaction_file_name, path="results"):
     """
     Sauvegarde la chaine de blocks en json
     
     Args:
         blockchaine (list): liste des blocks
+        transaction_file_name (str): nom du fichier de transactions
         path (str): chemin du fichier json
     """
 
     os.makedirs(path, exist_ok=True)
     date = datetime.datetime.now().strftime("%d-%m-%Y")  
-    nomf = f"result_{date}.json"
+    nomf = f"result_{transaction_file_name}_{date}.json"
     chemin = os.path.join(path, nomf)
 
     blockchaine_data = blockchaine_dict(blockchaine)
@@ -121,7 +122,7 @@ def main():
 
     blockchaine = creer_block_chain(transactions)
     
-    fichier = sauvegarder_en_json(blockchaine)
+    fichier = sauvegarder_en_json(blockchaine, os.path.splitext(fichier)[0])
     print(f"Chaine de blocks sauvegardée dans {fichier}")
 
     return blockchaine
