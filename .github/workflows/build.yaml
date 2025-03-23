@@ -9,6 +9,7 @@ jobs:
   sonarcloud:
     name: SonarCloud Analysis
     runs-on: ubuntu-latest
+    environment: SONAR_TOKEN
     steps:
       - uses: actions/checkout@v4
         with:
