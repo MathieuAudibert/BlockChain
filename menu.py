@@ -29,10 +29,6 @@ def menu():
         choix = input("Choice: ")
         if choix == "1":
             os.system("python3 src/main.py")
-        #elif choix == "2":
-            #os.system("python3 scripts/get_gameById.py")
-        #elif choix == "3":
-            #exit()
         elif choix == "" or choix == "2":
             exit()
         else:
