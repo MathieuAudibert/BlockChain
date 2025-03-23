@@ -27,6 +27,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt || echo "No requirements.txt found"
 
+      - name: Run tests and generate coverage report
+        run: |
+          pytest --cov=. --cov-report=xml --cov-report=term
+          
       - name: Run SonarCloud Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -38,4 +42,5 @@ jobs:
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.sources=. \
-            -Dsonar.python.version=3
+            -Dsonar.python.version=3 \
+            -Dsonar.coverageReportPaths=coverage.xml
