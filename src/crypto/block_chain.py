@@ -3,7 +3,6 @@ from dataclasses import dataclass
 from .block import Block
 from .tokens import Token
 from .transactions import Transaction
-from time import sleep
 
 @dataclass
 class BlockChain:
@@ -78,42 +77,4 @@ class BlockChain:
         raise ValueError("Block's previous hash does not match the last block's hash")
       new = Block(index=last.index + 1, timestamp=datetime.datetime.now().isoformat(), transactions=block.transactions, previous_hash=last.hash, hash=block.hash)
       self.blocks.append(new)
-    
-# Tests
-tekra = Token("Tekra", "TEK", 100.0)
 
-transaction1 = Transaction("Mathieu", "Franck", tekra, 10.0, datetime.datetime.now().isoformat())
-transaction2 = Transaction("Mathieu", "Franck", tekra, 5, datetime.datetime.now().isoformat())
-sleep(2)
-transaction3 = Transaction("Franck", "Roman", tekra, 8, datetime.datetime.now().isoformat())
-sleep(2)
-transaction4 = Transaction("Roman", "Elisa", tekra, 4, datetime.datetime.now().isoformat())
-transaction5 = Transaction("Roman", "Juliette", tekra, 4, datetime.datetime.now().isoformat())
-
-block1 = Block(0, datetime.datetime.now().isoformat(), [transaction1, transaction2], "0", "hash1")
-block2 = Block(1, datetime.datetime.now().isoformat(), [transaction3], block1.hash, "")
-block3 = Block(2, datetime.datetime.now().isoformat(), [transaction4, transaction5], block2.hash, "")
-blockchain = BlockChain([block1, block2, block3], block1)
-
-print("Blockchain created with genesis block:")
-print(blockchain.genesis)
-print("Blocks in the blockchain:")
-for block in blockchain.blocks:
-    print(block)
-
-def pretty_print_blockchain(blockchain):
-    print("\n=== Blockchain Overview ===")
-    print(f"Genesis Block: (index={blockchain.genesis.index}, hash={blockchain.genesis.hash})")
-    print("\nBlocks:")
-    for block in blockchain.blocks:
-        print(f"\n  Block #{block.index}")
-        print(f"    Timestamp: {block.timestamp}")
-        print(f"    Previous Hash: {block.previous_hash}")
-        print(f"    Hash: {block.hash}")
-        print(f"    Transactions:")
-        if not block.transactions:
-            print("      (No transactions)")
-        for tx in block.transactions:
-            print(f"      - {tx.sender} -> {tx.receiver} | {tx.amount} {tx.token.symbol} ({tx.token.name}) at {tx.timestamp}")
-
-pretty_print_blockchain(blockchain)
