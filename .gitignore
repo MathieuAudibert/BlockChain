@@ -6,6 +6,6 @@
 /src/__pycache__/
 /src/logs/*.txt
 
-/src/results/*.json
+/src/results/blocks.json
 
 **/__pycache__/
