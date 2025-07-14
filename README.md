@@ -1,6 +1,6 @@
-![Bugs](https://sonarcloud.io/api/project_badges/measure?project=MathieuAudibert_BlockChain&metric=bugs)
-![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=MathieuAudibert_BlockChain&metric=code_smells)
-![Coverage](https://sonarcloud.io/api/project_badges/measure?project=MathieuAudibert_BlockChain&metric=coverage)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=MathieuAudibert_BlockChain&metric=bugs&token=d7be540c8103597de4b21fa888b5daad459600e4)](https://sonarcloud.io/summary/new_code?id=MathieuAudibert_BlockChain)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=MathieuAudibert_BlockChain&metric=code_smells&token=d7be540c8103597de4b21fa888b5daad459600e4)](https://sonarcloud.io/summary/new_code?id=MathieuAudibert_BlockChain)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=MathieuAudibert_BlockChain&metric=coverage&token=d7be540c8103597de4b21fa888b5daad459600e4)](https://sonarcloud.io/summary/new_code?id=MathieuAudibert_BlockChain)
 
 # Token, block & blockchain learning
 
