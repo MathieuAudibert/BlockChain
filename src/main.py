@@ -162,6 +162,9 @@ def main():
     print(f"[{today_str}]: done and saved in {result_file}")
     print(f"[{today_str}]: Total blocks: {len(blockchain.blocks)} (including genesis)")
     print(f"[{today_str}]: Total transactions: {sum(len(block.transactions) for block in blockchain.blocks)}")
+    
+    # log blockchain information
+    log_blockchain(blockchain, 'logs/blocks.txt')
 
 if __name__ == "__main__":
     main()

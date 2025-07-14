@@ -1,0 +1,8 @@
+Blockchain created with genesis block:
+Block(_index=0, _timestamp='2025-07-15T00:40:34.530236', _transactions=[], _previous_hash='0', _hash='Genesis')
+Blocks in the blockchain:
+Block(_index=0, _timestamp='2025-07-15T00:40:34.530236', _transactions=[], _previous_hash='0', _hash='Genesis')
+Block(_index=1, _timestamp='2025-07-15T00:40:34.530236', _transactions=[Transaction(_sender='Mathieu', _receiver='Franck', _token=Token(_name='Tekra', _symbol='TEK', _value=100.0), _amount=10.0, _timestamp='2025-07-15T12:00:00'), Transaction(_sender='Mathieu', _receiver='Franck', _token=Token(_name='Tekra', _symbol='TEK', _value=100.0), _amount=5, _timestamp='2025-07-15T12:05:00')], _previous_hash='Genesis', _hash='1ad088179a5067c9ba1eb1f1b6404276949cb5ec028a4942e441f3f275b02b24')
+Block(_index=2, _timestamp='2025-07-15T00:40:34.531174', _transactions=[Transaction(_sender='Franck', _receiver='Roman', _token=Token(_name='Tekra', _symbol='TEK', _value=100.0), _amount=8, _timestamp='2025-07-15T13:00:00')], _previous_hash='1ad088179a5067c9ba1eb1f1b6404276949cb5ec028a4942e441f3f275b02b24', _hash='bca883b07cc41bc251470bc14b12e8df1d8c7c3e3dd72d7a29a0dc73151021cc')
+Block(_index=3, _timestamp='2025-07-15T00:40:34.532181', _transactions=[Transaction(_sender='Roman', _receiver='Elisa', _token=Token(_name='Tekra', _symbol='TEK', _value=100.0), _amount=4, _timestamp='2025-07-15T14:00:00'), Transaction(_sender='Roman', _receiver='Juliette', _token=Token(_name='Tekra', _symbol='TEK', _value=100.0), _amount=4, _timestamp='2025-07-15T14:15:00')], _previous_hash='bca883b07cc41bc251470bc14b12e8df1d8c7c3e3dd72d7a29a0dc73151021cc', _hash='c4c4c75964fae899c1e64f02b45d000ae8769997c1708ec9a2f1cd3b2cfc5433')
+======================================================================
