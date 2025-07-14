@@ -28,5 +28,3 @@ https://www.coinbase.com/fr-fr/learn/crypto-basics/what-is-a-token
 - Add your transactions in `/src/transactions` based of **template.json**
 - Run `cd /src` --> `python main.py`
 - You can then access logs in `/src/logs/blocks.txt` and results in `/src/today-date/blockchain-today-date.json`
-
-  a
