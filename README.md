@@ -4,7 +4,17 @@
 
 # Token, block & blockchain learning
 
-Project I made to understand better both blockchains and coins/tokens (https://www.coinbase.com/fr-fr/learn/crypto-basics/what-is-a-token)
+Understanding basic cryptographics through this Python project.
+
+I learned how to :
+
+- Create my own token (Tekra)
+- Create blocks of this token (or transactions in Euro)
+- Create block-chains for these blocks
+
+## Usefull docs
+
+(https://www.coinbase.com/fr-fr/learn/crypto-basics/what-is-a-token)
 
 # Config
 
