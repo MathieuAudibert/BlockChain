@@ -1,16 +1,26 @@
 {
-    "transactions": [
-        {
-            "sender": "Alice",
-            "recipient": "Bob",
-            "amount": 50,
-            "timestamp": "2023-10-01T12:00:00Z"
-        },
-        {
-            "sender": "Charlie",
-            "recipient": "Alice",
-            "amount": 30,
-            "timestamp": "2023-10-01T12:05:00Z"
-        }
-    ]
+  "transactions": [
+    {
+      "sender": "Mathieu",
+      "receiver": "Franck",
+      "token": {
+        "name": "Tekra",
+        "symbol": "TEK",
+        "value": 100.0
+      },
+      "amount": 10.0,
+      "timestamp": "2025-07-15T12:00:00"
+    },
+    {
+      "sender": "Mathieu",
+      "receiver": "Franck",
+      "token": {
+        "name": "Tekra",
+        "symbol": "TEK",
+        "value": 100.0
+      },
+      "amount": 5,
+      "timestamp": "2025-07-15T12:05:00"
+    }
+  ]
 }

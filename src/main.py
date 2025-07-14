@@ -1,33 +1,63 @@
 import datetime
+import json
+import os
 from crypto.block_chain import BlockChain
 from crypto.block import Block
 from crypto.transactions import Transaction
 from crypto.tokens import Token
 from time import sleep
 
-tekra = Token("Tekra", "TEK", 100.0)
+def load_transactions(file_path):
+    """
+    Load transactions from a JSON 
 
-transaction1 = Transaction("Mathieu", "Franck", tekra, 10.0, datetime.datetime.now().isoformat())
-transaction2 = Transaction("Mathieu", "Franck", tekra, 5, datetime.datetime.now().isoformat())
-sleep(2)
-transaction3 = Transaction("Franck", "Roman", tekra, 8, datetime.datetime.now().isoformat())
-sleep(2)
-transaction4 = Transaction("Roman", "Elisa", tekra, 4, datetime.datetime.now().isoformat())
-transaction5 = Transaction("Roman", "Juliette", tekra, 4, datetime.datetime.now().isoformat())
+    Args:
+    file_path (str): the path to the JSON 
 
-block1 = Block(0, datetime.datetime.now().isoformat(), [transaction1, transaction2], "0", "hash1")
-block2 = Block(1, datetime.datetime.now().isoformat(), [transaction3], block1.hash, "")
-block3 = Block(2, datetime.datetime.now().isoformat(), [transaction4, transaction5], block2.hash, "")
+    Returns:
+    list: list of transactions objects
+    """
+    with open(file_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    transactions = []
+    for tx in data['transactions']:
+        token = Token(tx['token']['name'], tx['token']['symbol'], tx['token']['value'])
+        transaction = Transaction(tx['sender'], tx['receiver'], token, tx['amount'], tx['timestamp'])
+        transactions.append(transaction)
+    
+    return transactions
 
-blockchain = BlockChain([block1, block2, block3], block1)
+def create_blockchain(transactions):
+    """
+    Create a blockchain 
 
-print("Blockchain created with genesis block:")
-print(blockchain.genesis)
-print("Blocks in the blockchain:")
-for block in blockchain.blocks:
-    print(block)
+    Args:
+    transactions (list): list of transactions objects
+
+    Returns:
+    BlockChain: a BlockChain object containing the genesis block and the blocks with transactions
+    """
+    genesis_block = Block(0, datetime.datetime.now().isoformat(), [], "0", "Genesis")
+    blockchain = BlockChain([genesis_block], genesis_block)
+    
+    for i, tx in enumerate(transactions):
+        previous_hash = blockchain.get_last().hash
+        block = Block(i + 1, datetime.datetime.now().isoformat(), [tx], previous_hash, "")
+        blockchain.blocks.append(block)
+    
+    return blockchain
 
 def pretty_print_blockchain(blockchain):
+    """
+    Pretty print the blockchain information
+
+    Args:
+    blockchain (BlockChain): the blockchain to print
+
+    Returns:
+    None
+    """
     print("\n=== Blockchain Overview ===")
     print(f"Genesis Block: (index={blockchain.genesis.index}, hash={blockchain.genesis.hash})")
     print("\nBlocks:")
@@ -43,11 +73,81 @@ def pretty_print_blockchain(blockchain):
             print(f"      - {tx.sender} -> {tx.receiver} | {tx.amount} {tx.token.symbol} ({tx.token.name}) at {tx.timestamp}")
 
 
+def log_blockchain(blockchain, file_path):
+    """
+    Log blockchain informations into a file
+
+    Args:
+    blockchain (BlockChain): the blockchain to log
+    file_path (str): the path to the log file
+
+    Returns:
+    None
+    """
+    with open(file_path, 'a', encoding='utf-8') as f:
+        f.write("Blockchain created with genesis block:\n")
+        f.write(str(blockchain.genesis) + "\n")
+        f.write("Blocks in the blockchain:\n")
+        for block in blockchain.blocks:
+            f.write(str(block) + "\n")
+        f.write("=" * 70 + "\n")
+
+
 def main():
-    print(f"[{datetime.datetime.now().strftime("%d-%m-%Y")}]: Blockchain simulation by @MathieuAudibert")
-    print(f"[{datetime.datetime.now().strftime("%d-%m-%Y")}]: Select the transaction file to add to the blockchain :")
-    print(f"[{datetime.datetime.now().strftime("%d-%m-%Y")}]: ")
-    pretty_print_blockchain(blockchain)
+    today_str = datetime.datetime.now().strftime('%d-%m-%Y')
+    transactions_dir = os.path.join(os.path.dirname(__file__), 'transactions')
+    results_dir = os.path.join(os.path.dirname(__file__), 'results', today_str)
+    os.makedirs(results_dir, exist_ok=True)
+
+    files = [f for f in os.listdir(transactions_dir) if f.endswith('.json')]
+    print(f"[{today_str}]: Blockchain simulation by @MathieuAudibert")
+    print(f"[{today_str}]: Creating blockchain from all transaction files...")
+    
+    genesis_block = Block(0, datetime.datetime.now().isoformat(), [], "0", "Genesis")
+    blockchain = BlockChain([genesis_block], genesis_block)
+    
+    for i, filename in enumerate(files):
+        print(f"[{today_str}]: Processing {filename}...")
+        file_path = os.path.join(transactions_dir, filename)
+        transactions = load_transactions(file_path)
+        
+        previous_hash = blockchain.get_last().hash
+        block = Block(i + 1, datetime.datetime.now().isoformat(), transactions, previous_hash, "")
+        blockchain.blocks.append(block)
+        print(f"[{today_str}]: Added block {i + 1} with {len(transactions)} transactions")
+
+    def block_to_dict(block):
+        return {
+            'index': block.index,
+            'timestamp': block.timestamp,
+            'transactions': [
+                {
+                    'sender': tx.sender,
+                    'receiver': tx.receiver,
+                    'token': {
+                        'name': tx.token.name,
+                        'symbol': tx.token.symbol,
+                        'value': tx.token.value
+                    },
+                    'amount': tx.amount,
+                    'timestamp': tx.timestamp
+                } for tx in block.transactions
+            ],
+            'previous_hash': block.previous_hash,
+            'hash': block.hash
+        }
+    blockchain_data = {
+        'genesis': block_to_dict(blockchain.genesis),
+        'blocks': [block_to_dict(b) for b in blockchain.blocks]
+    }
+    result_file = os.path.join(results_dir, f'blockchain-{today_str}.json')
+    with open(result_file, 'w', encoding='utf-8') as f:
+        json.dump(blockchain_data, f, indent=2)
+
+    print(f"[{today_str}]: Blockchain created successfully!")
+    print(f"[{today_str}]: done and saved in {result_file}")
+    print(f"[{today_str}]: Total blocks: {len(blockchain.blocks)} (including genesis)")
+    print(f"[{today_str}]: Total transactions: {sum(len(block.transactions) for block in blockchain.blocks)}")
 
 if __name__ == "__main__":
     main()

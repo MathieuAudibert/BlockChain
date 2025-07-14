@@ -1,0 +1,26 @@
+{
+  "transactions": [
+    {
+      "sender": "Roman",
+      "receiver": "Elisa",
+      "token": {
+        "name": "Tekra",
+        "symbol": "TEK",
+        "value": 100.0
+      },
+      "amount": 4,
+      "timestamp": "2025-07-15T14:00:00"
+    },
+    {
+      "sender": "Roman",
+      "receiver": "Juliette",
+      "token": {
+        "name": "Tekra",
+        "symbol": "TEK",
+        "value": 100.0
+      },
+      "amount": 4,
+      "timestamp": "2025-07-15T14:15:00"
+    }
+  ]
+}
