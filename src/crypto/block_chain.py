@@ -1,8 +1,8 @@
 import datetime
 from dataclasses import dataclass
-from block import Block
-from tokens import Token
-from transactions import Transaction
+from .block import Block
+from .tokens import Token
+from .transactions import Transaction
 from time import sleep
 
 @dataclass
