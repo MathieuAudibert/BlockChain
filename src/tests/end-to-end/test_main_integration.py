@@ -63,6 +63,7 @@ class TestMainIntegration:
             # Mock the datetime to have a consistent date
             with patch('datetime.datetime') as mock_datetime:
                 mock_datetime.now.return_value.strftime.return_value = "15-07-2025"
+                mock_datetime.now.return_value.isoformat.return_value = "2025-07-15T12:00:00"
                 
                 # Import and run main function
                 import sys
@@ -145,6 +146,7 @@ class TestMainIntegration:
             # Mock the datetime
             with patch('datetime.datetime') as mock_datetime:
                 mock_datetime.now.return_value.strftime.return_value = "15-07-2025"
+                mock_datetime.now.return_value.isoformat.return_value = "2025-07-15T12:00:00"
                 
                 # Import and run main function
                 import sys
@@ -203,6 +205,7 @@ class TestMainIntegration:
             # Mock the datetime
             with patch('datetime.datetime') as mock_datetime:
                 mock_datetime.now.return_value.strftime.return_value = "15-07-2025"
+                mock_datetime.now.return_value.isoformat.return_value = "2025-07-15T12:00:00"
                 
                 # Import and run main function
                 import sys
@@ -256,6 +259,7 @@ class TestMainIntegration:
             # Mock the datetime
             with patch('datetime.datetime') as mock_datetime:
                 mock_datetime.now.return_value.strftime.return_value = "15-07-2025"
+                mock_datetime.now.return_value.isoformat.return_value = "2025-07-15T12:00:00"
                 
                 # Import and run main function
                 import sys
@@ -286,6 +290,7 @@ class TestMainIntegration:
             # Mock the datetime
             with patch('datetime.datetime') as mock_datetime:
                 mock_datetime.now.return_value.strftime.return_value = "15-07-2025"
+                mock_datetime.now.return_value.isoformat.return_value = "2025-07-15T12:00:00"
                 
                 # Import and run main function
                 import sys
