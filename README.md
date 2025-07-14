@@ -9,12 +9,13 @@ Understanding basic cryptographics through this Python project.
 I learned how to :
 
 - Create my own token (Tekra)
-- Create blocks of this token (or transactions in Euro)
+- Create blocks of this token (or transactions with any other tokens/currency)
 - Create block-chains for these blocks
+- Create result files and logs dated
 
 ## Usefull docs
 
-(https://www.coinbase.com/fr-fr/learn/crypto-basics/what-is-a-token)
+https://www.coinbase.com/fr-fr/learn/crypto-basics/what-is-a-token
 
 # Config
 
@@ -22,7 +23,8 @@ I learned how to :
 
 # Usage
 
-- Format your transactions files in **json**
-- Insert your transactions.json files in **/src/transactions**
-- run `python menu.py `
-- Get your results in **/src/results**
+- [Optionnal]: Remove the tests files in `/src/transactions/` and `/src/results`
+- Install dependecies `cd /src` --> `pip install -r requirements.txt`
+- Add your transactions in `/src/transactions` based of **template.json**
+- Run `cd /src` --> `python main.py`
+- You can then access logs in `/src/logs/blocks.txt` and results in `/src/today-date/blockchain-today-date.json`
