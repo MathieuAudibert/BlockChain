@@ -94,12 +94,14 @@ def log_blockchain(blockchain, file_path):
 
 
 def main():
+    # useful variables
     today_str = datetime.datetime.now().strftime('%d-%m-%Y')
     transactions_dir = os.path.join(os.path.dirname(__file__), 'transactions')
     results_dir = os.path.join(os.path.dirname(__file__), 'results', today_str)
     os.makedirs(results_dir, exist_ok=True)
 
-    files = [f for f in os.listdir(transactions_dir) if f.endswith('.json')]
+    # get all transactions files (except template)
+    files = [f for f in os.listdir(transactions_dir) if f.endswith('.json') and f != 'template.json']
     print(f"[{today_str}]: Blockchain simulation by @MathieuAudibert")
     print(f"[{today_str}]: Creating blockchain from all transaction files...")
     
