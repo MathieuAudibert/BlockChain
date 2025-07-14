@@ -120,6 +120,7 @@ def main():
         blockchain.blocks.append(block)
         print(f"[{today_str}]: Added block {i + 1} with {len(transactions)} transactions")
 
+    #FIXME: a l'exterieur de la fonction main ? / outside main function ? 
     def block_to_dict(block):
         """
         Convert a Block object to a dictionary for JSON 
