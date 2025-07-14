@@ -105,9 +105,11 @@ def main():
     print(f"[{today_str}]: Blockchain simulation by @MathieuAudibert")
     print(f"[{today_str}]: Creating blockchain from all transaction files...")
     
+    # create the genesis block and the blockchain
     genesis_block = Block(0, datetime.datetime.now().isoformat(), [], "0", "Genesis")
     blockchain = BlockChain([genesis_block], genesis_block)
     
+    # process each transaction file
     for i, filename in enumerate(files):
         print(f"[{today_str}]: Processing {filename}...")
         file_path = os.path.join(transactions_dir, filename)
@@ -119,6 +121,15 @@ def main():
         print(f"[{today_str}]: Added block {i + 1} with {len(transactions)} transactions")
 
     def block_to_dict(block):
+        """
+        Convert a Block object to a dictionary for JSON 
+        
+        Args:
+        block (Block): the block to convert
+
+        Returns:
+        dict: a dictionary representation of the block
+        """
         return {
             'index': block.index,
             'timestamp': block.timestamp,
@@ -146,6 +157,7 @@ def main():
     with open(result_file, 'w', encoding='utf-8') as f:
         json.dump(blockchain_data, f, indent=2)
 
+    # useful infos
     print(f"[{today_str}]: Blockchain created successfully!")
     print(f"[{today_str}]: done and saved in {result_file}")
     print(f"[{today_str}]: Total blocks: {len(blockchain.blocks)} (including genesis)")
