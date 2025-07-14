@@ -1,41 +1,119 @@
-import hashlib
 import datetime
+from dataclasses import dataclass
+from block import Block
+from tokens import Token
+from transactions import Transaction
+from time import sleep
 
+@dataclass
 class BlockChain:
   """
-  Classe definissant le block
+  Class representing a blockchain.
+
+  Attributes:
+  blocks (list[Block]): list of blocks in the blockchain
+  genesis (Block): the first block of the blockchain
   """
+  _blocks: list[Block]
+  _genesis: Block
 
-  def __init__(self, liste_transactions, block_precedant):
-    self.liste_transactions = liste_transactions
-    self.block_precedant = block_precedant
-    self.block_timestamp = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
-    self.block_raw_data = " - ".join(liste_transactions) + " - " + block_precedant
-    self.hash = hashlib.sha256(self.block_raw_data.encode()).hexdigest()
-    self.block_data = " Hash: " + self.hash + " BlockP Hash: " + self.block_precedant + " Transactions: " + str(self.liste_transactions) + " Timestamp: " + self.block_timestamp
+  # Forcing good types
+  def __post_init__(self):
+    self.blocks = self._blocks
+    self.genesis = self._genesis
 
-  # Getters 
-  def get_list_transactions(self):
-    return self.liste_transactions
-
-  def get_block_precedant(self):
-    return self.block_precedant
-
-  def get_block_raw_data(self):
-    return self.block_raw_data
-
-  def get_hash(self):
-    return self.hash
-
-  def get_block_data(self):
-    return self.block_data
+  @property
+  def blocks(self):
+    return self._blocks
   
-  def get_block_timestamp(self):
-    return self.block_timestamp
+  @property
+  def genesis(self):
+    return self._genesis
   
-  # Setters
-  def set_list_transactions(self, liste_transactions):
-    self.liste_transactions = liste_transactions
+  @blocks.setter
+  def blocks(self, value: list[Block]):
+    if not isinstance(value, list):
+      raise TypeError("Blocks must be a list")
+    for block in value:
+      if not isinstance(block, Block):
+        raise TypeError("All items in blocks must be Block instances")
+    self._blocks = value
 
-  def set_block_precedant(self, block_precedant):
-    self.block_precedant = block_precedant
+  @genesis.setter
+  def genesis(self, value: Block): 
+    if not isinstance(value, Block):
+      raise TypeError("Genesis must be a Block instance")
+    self._genesis = value
+
+  def genesis_creation(self):
+    """
+    Create the genesis block and add it to the blockchain.
+    """
+    block = Block(index=0, timestamp=datetime.datetime.now().isoformat(), transactions=[], previous_hash="0", hash="Genesis")
+    self.blocks.append(block)
+  
+  def get_last(self):
+    """
+    Get the last block in the blockchain.
+    
+    Returns:
+    Block: the last block in the blockchain
+    """
+    if not self.blocks:
+      raise ValueError("Blockchain is empty")
+    return self.blocks[-1]
+  
+  def add_block(self, block: Block):
+    """
+    Add a new block to the blockchain.
+    
+    Args:
+    block (Block): the block to add
+    """
+    if not isinstance(block, Block):
+      raise TypeError("Block must be an instance of Block class")
+    if self.blocks:
+      last = self.get_last()
+      if block.previous_hash != last.hash:
+        raise ValueError("Block's previous hash does not match the last block's hash")
+      new = Block(index=last.index + 1, timestamp=datetime.datetime.now().isoformat(), transactions=block.transactions, previous_hash=last.hash, hash=block.hash)
+      self.blocks.append(new)
+    
+# Tests
+tekra = Token("Tekra", "TEK", 100.0)
+
+transaction1 = Transaction("Mathieu", "Franck", tekra, 10.0, datetime.datetime.now().isoformat())
+transaction2 = Transaction("Mathieu", "Franck", tekra, 5, datetime.datetime.now().isoformat())
+sleep(2)
+transaction3 = Transaction("Franck", "Roman", tekra, 8, datetime.datetime.now().isoformat())
+sleep(2)
+transaction4 = Transaction("Roman", "Elisa", tekra, 4, datetime.datetime.now().isoformat())
+transaction5 = Transaction("Roman", "Juliette", tekra, 4, datetime.datetime.now().isoformat())
+
+block1 = Block(0, datetime.datetime.now().isoformat(), [transaction1, transaction2], "0", "hash1")
+block2 = Block(1, datetime.datetime.now().isoformat(), [transaction3], block1.hash, "")
+block3 = Block(2, datetime.datetime.now().isoformat(), [transaction4, transaction5], block2.hash, "")
+blockchain = BlockChain([block1, block2, block3], block1)
+
+print("Blockchain created with genesis block:")
+print(blockchain.genesis)
+print("Blocks in the blockchain:")
+for block in blockchain.blocks:
+    print(block)
+
+def pretty_print_blockchain(blockchain):
+    print("\n=== Blockchain Overview ===")
+    print(f"Genesis Block: (index={blockchain.genesis.index}, hash={blockchain.genesis.hash})")
+    print("\nBlocks:")
+    for block in blockchain.blocks:
+        print(f"\n  Block #{block.index}")
+        print(f"    Timestamp: {block.timestamp}")
+        print(f"    Previous Hash: {block.previous_hash}")
+        print(f"    Hash: {block.hash}")
+        print(f"    Transactions:")
+        if not block.transactions:
+            print("      (No transactions)")
+        for tx in block.transactions:
+            print(f"      - {tx.sender} -> {tx.receiver} | {tx.amount} {tx.token.symbol} ({tx.token.name}) at {tx.timestamp}")
+
+pretty_print_blockchain(blockchain)
