@@ -10,7 +10,7 @@ class TestToken:
         token = Token("Bitcoin", "BTC", 1.0)
         assert token.name == "Bitcoin"
         assert token.symbol == "BTC"
-        assert token.value == 1.0
+        assert token.value == pytest.approx(1.0)
     
     def test_token_creation_with_different_types(self):
         """Test creating tokens with different value types."""
@@ -20,7 +20,7 @@ class TestToken:
         
         # Float value
         token2 = Token("Litecoin", "LTC", 3.5)
-        assert token2.value == 3.5
+        assert token2.value == pytest.approx(3.5)
     
     def test_token_string_representation(self):
         """Test the string representation of a token."""
@@ -58,9 +58,9 @@ class TestToken:
     def test_token_with_zero_value(self):
         """Test creating a token with zero value."""
         token = Token("Test", "TST", 0.0)
-        assert token.value == 0.0
+        assert token.value == pytest.approx(0.0)
     
     def test_token_with_negative_value(self):
         """Test creating a token with negative value."""
         token = Token("Test", "TST", -5.0)
-        assert token.value == -5.0 
+        assert token.value == pytest.approx(-5.0) 

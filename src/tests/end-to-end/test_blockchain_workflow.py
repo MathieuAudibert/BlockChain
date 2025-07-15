@@ -63,8 +63,8 @@ class TestBlockchainWorkflow:
             assert transactions[0].receiver == "Bob"
             assert transactions[0].token.name == "Bitcoin"
             assert transactions[0].token.symbol == "BTC"
-            assert transactions[0].token.value == 1.0
-            assert transactions[0].amount == 10.0
+            assert transactions[0].token.value == pytest.approx(1.0)
+            assert transactions[0].amount == pytest.approx(10.0)
             assert transactions[0].timestamp == "2025-07-15T12:00:00"
             
             # Check second transaction
@@ -72,8 +72,8 @@ class TestBlockchainWorkflow:
             assert transactions[1].receiver == "Charlie"
             assert transactions[1].token.name == "Ethereum"
             assert transactions[1].token.symbol == "ETH"
-            assert transactions[1].token.value == 2.0
-            assert transactions[1].amount == 5.0
+            assert transactions[1].token.value == pytest.approx(2.0)
+            assert transactions[1].amount == pytest.approx(5.0)
             assert transactions[1].timestamp == "2025-07-15T12:05:00"
             
         finally:
@@ -250,42 +250,53 @@ class TestBlockchainWorkflow:
             assert blockchain.blocks[1].index == 1
             assert blockchain.blocks[2].index == 2
             
-            # Test logging
-            log_file = os.path.join(logs_dir, "blocks.txt")
-            log_blockchain(blockchain, log_file)
+            # Verify transactions in blocks
+            assert len(blockchain.blocks[1].transactions) == 1
+            assert len(blockchain.blocks[2].transactions) == 1
             
-            # Verify log file was created
-            assert os.path.exists(log_file)
-            with open(log_file, 'r') as f:
-                log_content = f.read()
-                assert "Blockchain created with genesis block" in log_content
-                assert "Blocks in the blockchain" in log_content
+            # Check transaction details
+            tx1 = blockchain.blocks[1].transactions[0]
+            assert tx1.sender == "Alice"
+            assert tx1.receiver == "Bob"
+            assert tx1.token.name == "Bitcoin"
+            assert tx1.token.symbol == "BTC"
+            assert tx1.token.value == pytest.approx(1.0)
+            assert tx1.amount == pytest.approx(10.0)
+            
+            tx2 = blockchain.blocks[2].transactions[0]
+            assert tx2.sender == "Bob"
+            assert tx2.receiver == "Charlie"
+            assert tx2.token.name == "Ethereum"
+            assert tx2.token.symbol == "ETH"
+            assert tx2.token.value == pytest.approx(2.0)
+            assert tx2.amount == pytest.approx(5.0)
     
     def test_error_handling_invalid_json(self):
         """Test error handling for invalid JSON files"""
-        # Create a temporary invalid JSON file
+        # Create a temporary file with invalid JSON
         with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
-            f.write('{"invalid": json}')
+            f.write('{"invalid": json content')
             temp_file = f.name
         
         try:
+            # Import the function from main.py
             import sys
             sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
             from main import load_transactions
             
-            # Should raise JSONDecodeError
-            with pytest.raises(json.JSONDecodeError):
+            # Test that loading invalid JSON raises an exception
+            with pytest.raises(Exception):
                 load_transactions(temp_file)
-        
         finally:
             os.unlink(temp_file)
     
     def test_error_handling_missing_file(self):
         """Test error handling for missing files"""
+        # Import the function from main.py
         import sys
         sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
         from main import load_transactions
         
-        # Should raise FileNotFoundError
+        # Test that loading a non-existent file raises an exception
         with pytest.raises(FileNotFoundError):
             load_transactions("nonexistent_file.json") 

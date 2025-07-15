@@ -17,7 +17,7 @@ class TestTransaction:
         assert transaction.sender == "Alice"
         assert transaction.receiver == "Bob"
         assert transaction.token == token
-        assert transaction.amount == 10.0
+        assert transaction.amount == pytest.approx(10.0)
         assert transaction.timestamp == timestamp
     
     def test_transaction_creation_with_different_amount_types(self):
@@ -31,7 +31,7 @@ class TestTransaction:
         
         # Float amount
         transaction2 = Transaction("Bob", "Charlie", token, 5.5, timestamp)
-        assert transaction2.amount == 5.5
+        assert transaction2.amount == pytest.approx(5.5)
     
     def test_transaction_string_representation(self):
         """Test the string representation of a transaction."""
@@ -91,7 +91,7 @@ class TestTransaction:
         timestamp = "2025-07-15T12:00:00"
         
         transaction = Transaction("Alice", "Bob", token, 0.0, timestamp)
-        assert transaction.amount == 0.0
+        assert transaction.amount == pytest.approx(0.0)
     
     def test_transaction_with_negative_amount(self):
         """Test creating a transaction with negative amount."""
@@ -100,4 +100,4 @@ class TestTransaction:
         
         # Should not raise an exception for negative amounts
         transaction = Transaction("Alice", "Bob", token, -5.0, timestamp)
-        assert transaction.amount == -5.0 
+        assert transaction.amount == pytest.approx(-5.0) 
