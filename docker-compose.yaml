@@ -1,0 +1,10 @@
+services:
+  main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    environment:
+      - SONAR_TOKEN=${{ secrets.SONAR_TOKEN }}
+      - ENV=development
