@@ -7,3 +7,7 @@
 /src/logs/blocks.txt
 
 **/__pycache__/
+
+# Coverage
+/.coverage
+/coverage.xml
