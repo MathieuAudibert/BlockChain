@@ -232,7 +232,7 @@ class TestMainIntegration:
             transactions_dir = os.path.join(temp_dir, "transactions")
             os.makedirs(transactions_dir)
             
-            # Create logs directory
+            # Create logs directory (main function expects this to exist)
             logs_dir = os.path.join(temp_dir, "logs")
             os.makedirs(logs_dir)
             

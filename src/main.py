@@ -166,7 +166,9 @@ def main():
     print(f"[{today_str}]: Total transactions: {sum(len(block.transactions) for block in blockchain.blocks)}")
     
     # log blockchain information
-    log_blockchain(blockchain, 'logs/blocks.txt')
+    logs_dir = os.path.join(os.path.dirname(__file__), 'logs')
+    os.makedirs(logs_dir, exist_ok=True)
+    log_blockchain(blockchain, os.path.join(logs_dir, 'blocks.txt'))
 
 if __name__ == "__main__":
     main()

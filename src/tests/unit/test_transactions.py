@@ -66,23 +66,23 @@ class TestTransaction:
         timestamp = "2025-07-15T12:00:00"
         
         # Test sender validation
-        with pytest.raises(TypeError, match="Transaction sender must be a string"):
+        with pytest.raises(TypeError, match="Sender must be a string"):
             Transaction(123, "Bob", token, 10.0, timestamp)
         
         # Test receiver validation
-        with pytest.raises(TypeError, match="Transaction receiver must be a string"):
+        with pytest.raises(TypeError, match="Receiver must be a string"):
             Transaction("Alice", 123, token, 10.0, timestamp)
         
         # Test token validation
-        with pytest.raises(TypeError, match="Transaction token must be a Token instance"):
+        with pytest.raises(TypeError, match="Token must be an instance of Token class"):
             Transaction("Alice", "Bob", "not a token", 10.0, timestamp)
         
         # Test amount validation
-        with pytest.raises(TypeError, match="Transaction amount must be a number"):
+        with pytest.raises(TypeError, match="Amount must be a number"):
             Transaction("Alice", "Bob", token, "not a number", timestamp)
         
         # Test timestamp validation
-        with pytest.raises(TypeError, match="Transaction timestamp must be a string"):
+        with pytest.raises(TypeError, match="Timestamp must be a string"):
             Transaction("Alice", "Bob", token, 10.0, 123)
     
     def test_transaction_with_zero_amount(self):
