@@ -8,12 +8,20 @@ on:
 jobs:
   sonarqube:
     environment: SONAR_TOKEN
-    name: SonarQube
+    name: SonarQube Cloud
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install tox and any other packages
+        run: pip install tox
+      - name: Run tox
+        run: tox -e py
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
