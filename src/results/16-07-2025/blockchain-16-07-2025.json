@@ -1,0 +1,97 @@
+{
+  "genesis": {
+    "index": 0,
+    "timestamp": "2025-07-16T01:26:37.895951",
+    "transactions": [],
+    "previous_hash": "0",
+    "hash": "Genesis"
+  },
+  "blocks": [
+    {
+      "index": 0,
+      "timestamp": "2025-07-16T01:26:37.895951",
+      "transactions": [],
+      "previous_hash": "0",
+      "hash": "Genesis"
+    },
+    {
+      "index": 1,
+      "timestamp": "2025-07-16T01:26:37.896952",
+      "transactions": [
+        {
+          "sender": "Mathieu",
+          "receiver": "Franck",
+          "token": {
+            "name": "Tekra",
+            "symbol": "TEK",
+            "value": 100.0
+          },
+          "amount": 10.0,
+          "timestamp": "2025-07-15T12:00:00"
+        },
+        {
+          "sender": "Mathieu",
+          "receiver": "Franck",
+          "token": {
+            "name": "Tekra",
+            "symbol": "TEK",
+            "value": 100.0
+          },
+          "amount": 5,
+          "timestamp": "2025-07-15T12:05:00"
+        }
+      ],
+      "previous_hash": "Genesis",
+      "hash": "c5a8ab0c3ca74e9da219aec29a8f7f13eb5e0a86a95ef10f3b32dafad266d783"
+    },
+    {
+      "index": 2,
+      "timestamp": "2025-07-16T01:26:37.898951",
+      "transactions": [
+        {
+          "sender": "Franck",
+          "receiver": "Roman",
+          "token": {
+            "name": "Tekra",
+            "symbol": "TEK",
+            "value": 100.0
+          },
+          "amount": 8,
+          "timestamp": "2025-07-15T13:00:00"
+        }
+      ],
+      "previous_hash": "c5a8ab0c3ca74e9da219aec29a8f7f13eb5e0a86a95ef10f3b32dafad266d783",
+      "hash": "650989cd9e24be98c3bca98195c1ded175eb8c05ab957f6bfded258ddd6d7e95"
+    },
+    {
+      "index": 3,
+      "timestamp": "2025-07-16T01:26:37.898951",
+      "transactions": [
+        {
+          "sender": "Roman",
+          "receiver": "Elisa",
+          "token": {
+            "name": "Tekra",
+            "symbol": "TEK",
+            "value": 100.0
+          },
+          "amount": 4,
+          "timestamp": "2025-07-15T14:00:00"
+        },
+        {
+          "sender": "Roman",
+          "receiver": "Juliette",
+          "token": {
+            "name": "Tekra",
+            "symbol": "TEK",
+            "value": 100.0
+          },
+          "amount": 4,
+          "timestamp": "2025-07-15T14:15:00"
+        }
+      ],
+      "previous_hash": "650989cd9e24be98c3bca98195c1ded175eb8c05ab957f6bfded258ddd6d7e95",
+      "hash": "446fe3b2f59b118746dd88007feb7916c78c8a0f62eb452aad0d90cd140adf22"
+    }
+  ]
+}
