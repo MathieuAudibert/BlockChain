@@ -12,6 +12,11 @@ I learned how to :
 - Create blocks of this token (or transactions with any other tokens/currency)
 - Create block-chains for these blocks
 - Create result files and logs dated
+- Setup properly Sonarqube, Python & Pytest/Tox
+
+# CI/CD
+
+Each commit is analyzed by Sonarqube and Pytest/Tox wich then is pushed to the dockerhub official image `https://hub.docker.com/repository/docker/cap92/blockchainspython/general`
 
 ## Usefull docs
 
@@ -20,11 +25,17 @@ https://www.coinbase.com/fr-fr/learn/crypto-basics/what-is-a-token
 # Config
 
 - Python 3.x
+- Docker
 
 # Usage
 
 - [Optionnal]: Remove the tests files in `/src/transactions/` and `/src/results`
-- Install dependecies `cd /src` --> `pip install -r requirements.txt`
 - Add your transactions in `/src/transactions` based of **template.json**
 - Run `cd /src` --> `python main.py`
 - You can then access logs in `/src/logs/blocks.txt` and results in `/src/today-date/blockchain-today-date.json`
+
+# Installation
+
+You can either clone this repository with `git clone https://github.com/MathieuAudibert/BlockChain.git`
+
+or pull its public image using Docker `docker image pull cap92/blockchainspython` or Podman `podman image pull cap92/blockchainspython`
