@@ -13,7 +13,7 @@ class Block:
     previous_hash (str): the hash of the previous block
     hash (str): the hash of the current block
     """
-    #FIXME: ajouter un nonce ? / add a nonce ?
+    #IDEA: ajouter un nonce ? / add a nonce ?
 
     _index: int
     _timestamp: str
