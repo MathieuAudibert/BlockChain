@@ -11,6 +11,7 @@ from crypto.block import Block
 from crypto.transactions import Transaction
 from crypto.tokens import Token
 
+date_test = "2025-07-15T12:00:00"
 
 @pytest.fixture
 def sample_token():
@@ -21,19 +22,19 @@ def sample_token():
 @pytest.fixture
 def sample_transaction(sample_token):
     """Create a sample transaction for testing"""
-    return Transaction("Alice", "Bob", sample_token, 10.0, "2025-07-15T12:00:00")
+    return Transaction("Alice", "Bob", sample_token, 10.0, date_test)
 
 
 @pytest.fixture
 def sample_block(sample_transaction):
     """Create a sample block for testing"""
-    return Block(1, "2025-07-15T12:00:00", [sample_transaction], "0", "abc123")
+    return Block(1, date_test, [sample_transaction], "0", "abc123")
 
 
 @pytest.fixture
 def sample_blockchain(sample_block):
     """Create a sample blockchain for testing"""
-    genesis_block = Block(0, "2025-07-15T12:00:00", [], "0", "Genesis")
+    genesis_block = Block(0, date_test, [], "0", "Genesis")
     return BlockChain([genesis_block, sample_block], genesis_block)
 
 
@@ -51,7 +52,7 @@ def temp_transactions_file():
                     "value": 1.0
                 },
                 "amount": 10.0,
-                "timestamp": "2025-07-15T12:00:00"
+                "timestamp": date_test
             },
             {
                 "sender": "Bob",
@@ -93,5 +94,5 @@ def mock_datetime():
     
     with patch('datetime.datetime') as mock_dt:
         mock_dt.now.return_value.strftime.return_value = "15-07-2025"
-        mock_dt.now.return_value.isoformat.return_value = "2025-07-15T12:00:00"
+        mock_dt.now.return_value.isoformat.return_value = date_test
         yield mock_dt 

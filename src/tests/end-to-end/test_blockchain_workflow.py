@@ -160,7 +160,7 @@ class TestBlockchainWorkflow:
         
         # Test JSON serialization
         json_str = json.dumps(blockchain_data, indent=2)
-        assert json_str is not None
+        assert json_str 
         assert "genesis" in json_str
         assert "blocks" in json_str
         assert "Alice" in json_str

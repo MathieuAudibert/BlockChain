@@ -67,7 +67,7 @@ def pretty_print_blockchain(blockchain):
         print(f"    Timestamp: {block.timestamp}")
         print(f"    Previous Hash: {block.previous_hash}")
         print(f"    Hash: {block.hash}")
-        print(f"    Transactions:")
+        print("    Transactions:")
         if not block.transactions:
             print("      (No transactions)")
         for tx in block.transactions:
